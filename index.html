@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mood Giphy</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- Link to jQuery library-->
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Nothing+You+Could+Do" rel="stylesheet"> <!-- Google Fonta-->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>  <!-- External style sheet for custom aesthetic adjustments-->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">     <!-- Favicon-->  
+</head>    
+<body>       
+    <header id="heading-mssg" class="heading-font">
+            <h1 class="heading-margin"> Moods and Emotions</h1> 
+    </header> 
+    <div id="content-container">       
+        <div class="row" id="top-row"> 
+            <div id="intro-mssg" class="col content-font">  
+                <p>    
+                    Tired of expressing emotions through language?
+                    Well then your in the right place. 
+                    Just pick an emotion and watch as animated and    
+                    ready to use Gif's are generated for you
+                    <br> <br>
+                    You can even add new emotions, pause Gif's with a click, 
+                    download them to your computer, or save them to the favorites section!
+                </p>     
+            </div>   
+            <div id="form-addGif" class="col content-font">
+                <div class="form-align">
+                    <label id="add-gif-label" for="add-category">Add Category:</label>
+                </div> 
+                <div class="form-align">
+                    <input id="add-gif-input" type="text" placeholder="Add an emotion...">
+                </div>  
+                <div class="form-align">  
+                    <button id="add-gif-button" type="submit"> ADD </button>
+                </div>    
+            </div>         
+        </div>           
+        <div class="row">   
+            <div id="buttons-div" class="col">  
+                <h1 class="heading-margin"> Moods </h1>   
+            </div>    
+            <div id="gif-container" class="col">  
+                <h1 class="heading-margin"> Gif's Generated </h1>
+                <div id="gif-choices">  
+                    <button id="gif-add-five" type="submit"> 5 more ! </button> 
+                    <button id="gif-add-fav" type="submit"> Favourite </button>
+                </div>  
+                <div id="added-gifs">     
+                </div> 
+            </div>  
+            <div id="fav-container" class="col">
+                <h1 class="heading-margin"> Favorites </h1> 
+                <br> 
+                <button id="delete-fav" type="submit"> Remove </button>
+                <button id="gif-download" type="submit"> Download </button>  
+            </div>
+        </div>  
+    </div> 
+    <script src="assets/javascript/api_logic.js"></script> <!--Link to external javascript file  --> 
+</body>
+</html>  

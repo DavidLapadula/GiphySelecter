@@ -1,0 +1,217 @@
+.heading-font {
+    font-family: 'Lobster', cursive;
+}
+
+.content-font {
+    font-family: 'Nothing You Could Do', cursive;
+}  
+
+.heading-margin {
+    margin: 0; 
+}
+ 
+body {
+    position: absolute;
+    height: 100vh;
+    width: 100vw; 
+    background-image: url("../images/background.jpg"); 
+    top: 0; 
+    display: flex;
+    flex-direction: column;
+}  
+ 
+#heading-mssg {
+    color: purple; 
+    text-align: center; 
+    font-size: 2vw;  
+    width: 90vw;
+    margin: 1vh auto; 
+}    
+  
+#content-container {
+    width: 90vw; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+} 
+
+.row:before, 
+.row:after {
+    content:"";
+    display: table ;
+    clear: both;
+}   
+
+div[class*="col"]{
+    float: left;
+    min-height: 1px; 
+    padding: 0.25em; 
+    display: table; 
+}
+ 
+div[class*="row"]{
+    display: flex;
+    justify-content: center; 
+}
+
+/* Row with text and form begins */
+#top-row {
+    display: flex; 
+    align-items: center;  
+    margin-top:1em; 
+}
+
+#intro-mssg {
+    width: 60%; 
+    color: white; 
+    font-size: 2em;  
+    font-weight: bold;  
+}
+
+#form-addGif {
+    width: 20%; 
+    color: white; 
+    border: 0.25em solid  rgb(6, 247, 255); 
+    text-align: center; 
+    display: table;  
+}
+
+.form-align {
+    display: flex; 
+    justify-content: center; 
+    margin: 1em; 
+}
+
+#add-gif-label {
+    width: 100%; 
+    font-size: 2em;  
+} 
+
+#add-gif-input {
+    width: 80%; 
+    color: purple; 
+    font-weight: bold; 
+    font-size: 1em; 
+    text-align: center; 
+
+} 
+
+#add-gif-button {
+    width: 50%;  
+    background-color: purple; /* Green */
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+} 
+
+#add-gif-button:hover {
+    background-color: white; /* Green */
+    color: purple;
+} 
+  
+/* Row with content begins  */
+#buttons-div { 
+    width: 10%; 
+    margin: 0.5%;  
+    color: rgb(6, 247, 255); 
+    text-align: center;   
+}
+
+.gif-button {
+    background-color: rgb(6, 247, 255);
+    color: grey;
+    text-align: center;
+    font-size: 1.1em;
+    width: 80%; 
+    margin: 0.5em;  
+    padding: 0.5em; 
+    outline: none; 
+}
+
+.gif-button:hover {
+    border-radius: 90%; 
+}
+
+#gif-choices {
+ margin-top:0.5em; 
+}
+
+#gif-add-five {
+    background-color: purple; 
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1em; 
+    margin: 0.25em; 
+}
+
+#gif-add-fav {
+    background-color: purple; 
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1em; 
+    margin: 0.25em;  
+}  
+
+#gif-add-fav:hover, #gif-add-five:hover {
+    background-color: white;
+    color: purple; 
+}    
+
+#gif-container {
+    width: 70%; 
+    border: 0.25em solid  purple; 
+    margin: 0.5%;  
+    color: purple; 
+    text-align: center; 
+}
+
+#added-gifs {
+    content:""; 
+    display: table; 
+    clear: both;
+    text-align: center; 
+    align-content: center; 
+}
+
+#fav-container { 
+    width: 20%; 
+    margin: 0.5%;  
+    color: white; 
+    text-align: center; 
+}
+
+#gif-download {
+    background-color: white;
+    color: black; 
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0.25em;   
+}  
+
+#delete-fav {
+    background-color: white;
+    color: black; 
+    text-align: center;
+    font-size: 1.1em;
+    margin: 0.25em;  
+} 
+
+#delete-fav:hover, #gif-download:hover {
+    background-color: black;
+    color: white; 
+}
+
+.added-image {  
+    color: white; 
+    margin: 0.5em;
+    display: inline-block; 
+}
+
+.added-image img {
+    width: 10vw; 
+    height: 10vw;  
+}
+  
+/* Media Queries for responsive design */
+ 
