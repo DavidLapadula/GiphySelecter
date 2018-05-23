@@ -10,7 +10,7 @@
     margin: 0; 
 }
  
-body {
+body { 
     position: absolute;
     height: 100vh;
     width: 100vw; 
@@ -29,7 +29,7 @@ body {
 }    
   
 #content-container {
-    width: 90vw; 
+    width: 70vw; 
     margin: 0 auto; 
     box-sizing: border-box; 
 } 
@@ -58,8 +58,8 @@ div[class*="row"]{
     display: flex; 
     align-items: center;  
     margin-top:1em; 
-}
-
+}    
+ 
 #intro-mssg {
     width: 60%; 
     color: white; 
@@ -84,7 +84,7 @@ div[class*="row"]{
 #add-gif-label {
     width: 100%; 
     font-size: 2em;  
-} 
+}  
 
 #add-gif-input {
     width: 80%; 
@@ -107,14 +107,14 @@ div[class*="row"]{
     background-color: white; /* Green */
     color: purple;
 } 
-  
+   
 /* Row with content begins  */
 #buttons-div { 
     width: 10%; 
     margin: 0.5%;  
     color: rgb(6, 247, 255); 
     text-align: center;   
-}
+} 
 
 .gif-button {
     background-color: rgb(6, 247, 255);
@@ -131,77 +131,22 @@ div[class*="row"]{
     border-radius: 90%; 
 }
 
-#gif-choices {
- margin-top:0.5em; 
-}
-
-#gif-add-five {
-    background-color: purple; 
-    color: white;
-    text-align: center;
-    font-size: 1.1em;
-    padding: 1em; 
-    margin: 0.25em; 
-}
-
-#gif-add-fav {
-    background-color: purple; 
-    color: white;
-    text-align: center;
-    font-size: 1.1em;
-    padding: 1em; 
-    margin: 0.25em;  
-}  
-
-#gif-add-fav:hover, #gif-add-five:hover {
-    background-color: white;
-    color: purple; 
-}    
-
 #gif-container {
     width: 70%; 
-    border: 0.25em solid  purple; 
     margin: 0.5%;  
     color: purple; 
     text-align: center; 
 }
 
 #added-gifs {
+    margin-top: 1em; 
     content:""; 
     display: table; 
     clear: both;
     text-align: center; 
     align-content: center; 
 }
-
-#fav-container { 
-    width: 20%; 
-    margin: 0.5%;  
-    color: white; 
-    text-align: center; 
-}
-
-#gif-download {
-    background-color: white;
-    color: black; 
-    text-align: center;
-    font-size: 1.1em;
-    margin: 0.25em;   
-}  
-
-#delete-fav {
-    background-color: white;
-    color: black; 
-    text-align: center;
-    font-size: 1.1em;
-    margin: 0.25em;  
-} 
-
-#delete-fav:hover, #gif-download:hover {
-    background-color: black;
-    color: white; 
-}
-
+ 
 .added-image {  
     color: white; 
     margin: 0.5em;
@@ -209,8 +154,8 @@ div[class*="row"]{
 }
 
 .added-image img {
-    width: 10vw; 
-    height: 10vw;  
+    width: 8vw; 
+    height: 8vw;  
 }
   
 /* Media Queries for responsive design */
