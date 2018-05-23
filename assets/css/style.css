@@ -8,8 +8,8 @@
 
 .heading-margin {
     margin: 0; 
-}
- 
+} 
+  
 body { 
     position: absolute;
     height: 100vh;
@@ -63,7 +63,7 @@ div[class*="row"]{
 #intro-mssg {
     width: 60%; 
     color: white; 
-    font-size: 2em;  
+    font-size: 1.5vw;  
     font-weight: bold;  
 }
 
@@ -158,5 +158,56 @@ div[class*="row"]{
     height: 8vw;  
 }
   
-/* Media Queries for responsive design */
+/* Account for average screen of laptop*/
+
+@media screen and (max-width: 1440px) {
+    
+    #intro-mssg {
+        font-size: 1.5em;  
+    }
+     
+    #heading-mssg {
+        font-size: 3vw;  
+    }  
+    
+    .added-image img { 
+        width: 10vw; 
+        height: 10vw;  
+    } 
+
+    #content-container {
+        width: 90vw;
+    } 
+
+    .gif-button {
+       padding: 0;  
+    } 
+     
+}   
  
+
+@media screen and (max-width: 960px) {
+
+    #intro-mssg {
+        font-size: 1.2em;  
+    } 
+
+    .added-image img {
+        width: 12vw; 
+        height: 12vw;  
+    }
+
+    #add-gif-input {
+        width: 100%;
+    
+    } 
+ 
+    #add-gif-button {
+        width: 100%; 
+    } 
+
+    .gif-button {
+        width: 80%; 
+        font-size: 1em;
+    }
+}

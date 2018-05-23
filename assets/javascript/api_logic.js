@@ -44,7 +44,7 @@ $( document ).ready(function() {
         addedGifs.append(newImageDiv);      
         }   
     
-    }        
+    }         
 
     // Button for adding new emotions
     $(newButtonGif).on('click', function () { 
@@ -56,7 +56,7 @@ $( document ).ready(function() {
         buttonsDiv.append(dynamicButton);   
         }   
         gifInputField.val('').attr("placeholder", "Add emotion...")
-    });
+    }); 
     
     //Button for pausing and playing each gif
     $(addedGifs).on('click', '.retrieved-image' , function () {
@@ -69,7 +69,7 @@ $( document ).ready(function() {
             animatedSrc = clickedGif.data('still'); 
             clickedGif[0].src = animatedSrc;  
             clickedGif.data('state', 'pause');  
-        }
+        } 
     }); 
     
     // Register click event on emotions button for API query
@@ -78,7 +78,7 @@ $( document ).ready(function() {
         addedGifs.empty();  
         buttonValue = this.innerText.toLowerCase(); 
         generateQuery (buttonValue, 10);    
-        $.ajax({  
+        $.ajax({   
             url: newQuery,     
             method: "GET"
         }).then(populateGifImages);  
