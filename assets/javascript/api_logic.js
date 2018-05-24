@@ -5,10 +5,12 @@ $( document ).ready(function() {
     var addedGifs = $("#added-gifs"); 
     var newButtonGif = $("#add-gif-button"); 
     var gifInputField = $("#add-gif-input");  
+    var mainHeaderText = $("#main-header");  
     
     // Global Variables and Game Markers
     var buttonStyle = "gif-button"; 
-    var imageStyle = "added-image";   
+    var imageStyle = "added-image";
+    var buttonValue;    
 
     //Set the object and variables to build the API key for requests
     var queryURL = "https://api.giphy.com/v1/gifs/search?";  
@@ -42,10 +44,11 @@ $( document ).ready(function() {
         newImageEl.attr('src',  queryArray.data[i].images.original_still.url);  
         newImageDiv.append(newImageEl, newGifRating); 
         addedGifs.append(newImageDiv);      
+        mainHeaderText.text(`Current Emotion: ${buttonValue.toUpperCase()}`) 
         }   
     
-    }         
-
+    }          
+   
     // Button for adding new emotions
     $(newButtonGif).on('click', function () { 
         if (!gifInputField.val()) {
@@ -55,9 +58,9 @@ $( document ).ready(function() {
         dynamicButton.attr({class:buttonStyle, id: 'button-' + gifInputField.val().trim()});    
         buttonsDiv.append(dynamicButton);   
         }   
-        gifInputField.val('').attr("placeholder", "Add emotion...")
-    }); 
-    
+        gifInputField.val('').attr("placeholder", "I feel...")
+    });   
+     
     //Button for pausing and playing each gif
     $(addedGifs).on('click', '.retrieved-image' , function () {
         clickedGif = $(this);  
@@ -70,7 +73,7 @@ $( document ).ready(function() {
             clickedGif[0].src = animatedSrc;  
             clickedGif.data('state', 'pause');  
         } 
-    }); 
+    });  
     
     // Register click event on emotions button for API query
     buttonsDiv.on('click', 'button', function (event) {
@@ -85,3 +88,4 @@ $( document ).ready(function() {
     });  
     
 });   
+ 
