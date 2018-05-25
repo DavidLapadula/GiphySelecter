@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,21 +9,21 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Nothing+You+Could+Do" rel="stylesheet"> <!-- Google Fonta-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css"/>  <!-- External style sheet for custom aesthetic adjustments-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">     <!-- Favicon-->  
-</head>      
-<body>       
+</head>       
+<body>          
     <header id="heading-mssg" class="heading-font">
-            <h1 class="heading-margin"> Moods and Emotions</h1> 
-    </header>  
+            <h1 class="heading-margin"> Moods and Emotions</h1>  
+    </header>    
     <div id="content-container">       
-        <div class="row" id="top-row">     
+        <div class="row" id="top-row">       
             <div id="intro-mssg" class="col content-font">    
-                <p>     
+                <p>      
                     Tired of expressing emotions through language?
-                    Well then your in the right place. 
                     Just pick an emotion and see the Gif's appear! Full animation
-                    at the click of a button!
-                </p>         
-            </div>      
+                    at the click of a button! 
+                    They even save when you leave the page!
+                </p>          
+            </div>          
             <div id="form-addGif" class="col content-font">   
                 <div class="form-align">
                     <label id="add-gif-label" for="add-category">Add Mood:</label>
@@ -34,18 +34,19 @@
                 <div class="form-align">   
                     <button id="add-gif-button" type="submit"> ADD </button>
                 </div>      
-            </div>                   
-        </div>               
+            </div>                           
+        </div>                    
         <div class="row">    
             <div id="buttons-div" class="col">  
-                <h1 class="heading-margin"> Moods </h1>   
+                <h1 class="heading-margin"> Moods </h1> 
+                <button id="reset-mood" type="submit">RESET</button>
             </div>     
-            <div id="gif-container" class="col">  
+            <div id="gif-container" class="col">   
                 <h1 class="heading-margin" id="main-header"> Mood GIF's</h1> 
                 <div id="added-gifs">     
                 </div> 
             </div>   
-        </div>  
+        </div>    
     </div> 
     <script src="assets/javascript/api_logic.js"></script> <!--Link to external javascript file  --> 
 </body>

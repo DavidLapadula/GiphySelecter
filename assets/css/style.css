@@ -74,7 +74,7 @@ div[class*="row"]{
     text-align: center; 
     display: table;  
 }
-
+ 
 .form-align {
     display: flex; 
     justify-content: center; 
@@ -93,21 +93,45 @@ div[class*="row"]{
     font-size: 1em; 
     text-align: center; 
 
-} 
+}  
 
 #add-gif-button {
     width: 50%;  
-    background-color: purple; /* Green */
+    background-color: purple; 
     color: white;
     text-align: center;
     font-size: 1.1em;
 } 
+   
+#reset-button {
+    width: 100%;  
+    background-color: purple; 
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 1em 0.5em; 
+    padding: 0.5em 0; 
+} 
 
-#add-gif-button:hover {
-    background-color: white; /* Green */
+#add-gif-button:hover, #reset-button:hover {
+    background-color: white;
     color: purple;
 } 
-   
+
+#reset-mood {
+    width: 100%;  
+    background-color: white; 
+    color: black;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 1em 0.5em; 
+    padding: 0.5em 0; 
+}
+
+#reset-mood:hover { 
+    border-radius: 90%; 
+} 
+     
 /* Row with content begins  */
 #buttons-div { 
     width: 10%; 

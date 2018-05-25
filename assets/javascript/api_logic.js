@@ -1,31 +1,56 @@
 $( document ).ready(function() {
- 
+  
     //Selectors 
     var buttonsDiv = $("#buttons-div"); 
     var addedGifs = $("#added-gifs"); 
     var newButtonGif = $("#add-gif-button"); 
     var gifInputField = $("#add-gif-input");  
+    var resetMood = $("#reset-mood");  
     var mainHeaderText = $("#main-header");  
-    
+     
     // Global Variables and Game Markers
     var buttonStyle = "gif-button"; 
     var imageStyle = "added-image";
     var buttonValue;    
+    var startingEmotions;
+    var addedEmotions; 
+    var allEmotions; 
 
     //Set the object and variables to build the API key for requests
     var queryURL = "https://api.giphy.com/v1/gifs/search?";  
     var queryParameters = {"api_key": "nHBumPbWahGsvmlTe7EP1iepLbvF1Upi"};
-    var startingEmotions =  ["HAPPY", "SAD", "TIRED", "ANGRY", "HUNGRY"]; 
+    var emotions =  { 
+        starting: ["SAD", "HAPPY", "TIRED", "ANGRY", "HUNGRY"], 
+        added: []
+    }  
 
     // <----------- Application functionality --------------> //
-        
-    // Loop that generates the array that makes the buttons for adding emotion gifs
-    for (let i = 0; i < startingEmotions.length; i++) {
-        newEmotionButton = $(`<button>${startingEmotions[i]}</button>`);  
-        newEmotionButton.attr({class:buttonStyle, id: 'button-' + startingEmotions[i]});  
-        buttonsDiv.append(newEmotionButton);    
-    }     
     
+    // If its the first time it sets the starting values in local storage
+    if (localStorage.getItem('startingEmotions') === null) {
+        localStorage.setItem('startingEmotions', emotions.starting)
+        localStorage.setItem('addedEmotions', emotions.added)
+    }
+ 
+    // Function that returns array to be looped over to make buttons
+    var makeButtons = function () {
+        startingEmotions = localStorage.getItem('startingEmotions'); 
+        addedEmotions = localStorage.getItem('addedEmotions');
+        startingEmotionsArray = startingEmotions.split(','); 
+        addedEmotionsArray = addedEmotions.split(',');  
+        allEmotions = startingEmotionsArray.concat(addedEmotionsArray);   
+            for (let i = 0; i < allEmotions.length; i++) {
+                if (allEmotions[i] === '') { continue; }  
+                newEmotionButton = $(`<button>${allEmotions[i]}</button>`);  
+                newEmotionButton.attr({class:buttonStyle});  
+                buttonsDiv.append(newEmotionButton);    
+        }  
+ 
+    }   
+
+    // First call to the functions to populate the buttons when the page loads
+    makeButtons();  
+
     // Function that queries the Giphy API
     function generateQuery (queryVal, queryAmount) {
         queryParameters.q = queryVal; 
@@ -34,7 +59,7 @@ $( document ).ready(function() {
         return newQuery;    
     }     
     
-    // Function that populates favorites Section 
+    // Function that populates the Gif images section 
     function populateGifImages (queryArray){
         for (var i = 0; i < queryArray.data.length; i++) {  
         newImageDiv = $('<div></div>').addClass(imageStyle)
@@ -46,17 +71,21 @@ $( document ).ready(function() {
         addedGifs.append(newImageDiv);      
         mainHeaderText.text(`Current Emotion: ${buttonValue.toUpperCase()}`) 
         }   
-    
+      
     }          
    
     // Button for adding new emotions
     $(newButtonGif).on('click', function () { 
         if (!gifInputField.val()) {
             alert("Type an emotion first!");
+        } else if  (allEmotions.includes(gifInputField.val().trim().toUpperCase()))  {
+            alert("You already have that one!"); 
         } else { 
-        dynamicButton = $(`<button>${gifInputField.val().trim().toUpperCase()}</button>`);  
-        dynamicButton.attr({class:buttonStyle, id: 'button-' + gifInputField.val().trim()});    
-        buttonsDiv.append(dynamicButton);   
+        $('.gif-button').remove(); 
+        dynamicButton = gifInputField.val().trim().toUpperCase();  
+        emotions.added.push(dynamicButton);  
+        localStorage.setItem('addedEmotions', emotions.added);  
+        makeButtons(); 
         }   
         gifInputField.val('').attr("placeholder", "I feel...")
     });   
@@ -73,19 +102,29 @@ $( document ).ready(function() {
             clickedGif[0].src = animatedSrc;  
             clickedGif.data('state', 'pause');  
         } 
-    });  
+    });    
     
     // Register click event on emotions button for API query
-    buttonsDiv.on('click', 'button', function (event) {
+    buttonsDiv.on('click', '.gif-button', function (event) {
         event.preventDefault(); 
         addedGifs.empty();  
         buttonValue = this.innerText.toLowerCase(); 
-        generateQuery (buttonValue, 10);    
-        $.ajax({   
+        generateQuery (buttonValue, 10);     
+        $.ajax({    
             url: newQuery,     
             method: "GET"
-        }).then(populateGifImages);  
+        }).then(populateGifImages);    
     });  
+
+    //Resets the images and buttons to the original state when the page loaded
+    resetMood.on('click', function () {
+        $('.gif-button').remove(); 
+        addedGifs.empty();  
+        event.preventDefault();
+        mainHeaderText.text('Mood GIF\'s'); 
+        emotions.added = []; 
+        localStorage.setItem('addedEmotions', emotions.added)
+        makeButtons();
+    });   
     
 });   
- 
