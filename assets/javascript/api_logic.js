@@ -8,7 +8,7 @@ $( document ).ready(function() {
     var resetMood = $("#reset-mood");  
     var mainHeaderText = $("#main-header");  
      
-    // Global Variables and Game Markers
+    // Global Variables 
     var buttonStyle = "gif-button"; 
     var imageStyle = "added-image";
     var buttonValue;    
@@ -26,13 +26,13 @@ $( document ).ready(function() {
 
     // <----------- Application functionality --------------> //
     
-    // If its the first time it sets the starting values in local storage
+    // Sets arrays to local storage if its the first time using application or local storage has been cleared 
     if (localStorage.getItem('startingEmotions') === null) {
         localStorage.setItem('startingEmotions', emotions.starting)
         localStorage.setItem('addedEmotions', emotions.added)
     }
  
-    // Function that returns array to be looped over to make buttons
+    // Function that makes buttons based on whatever is on local storage
     var makeButtons = function () {
         startingEmotions = localStorage.getItem('startingEmotions'); 
         addedEmotions = localStorage.getItem('addedEmotions');
@@ -76,13 +76,13 @@ $( document ).ready(function() {
    
     // Button for adding new emotions
     $(newButtonGif).on('click', function () { 
+        dynamicButton = gifInputField.val().trim().toUpperCase();  
         if (!gifInputField.val()) {
             alert("Type an emotion first!");
-        } else if  (allEmotions.includes(gifInputField.val().trim().toUpperCase()))  {
+        } else if  (allEmotions.includes(dynamicButton)) {  
             alert("You already have that one!"); 
         } else { 
         $('.gif-button').remove(); 
-        dynamicButton = gifInputField.val().trim().toUpperCase();  
         emotions.added.push(dynamicButton);  
         localStorage.setItem('addedEmotions', emotions.added);  
         makeButtons(); 
@@ -118,13 +118,13 @@ $( document ).ready(function() {
 
     //Resets the images and buttons to the original state when the page loaded
     resetMood.on('click', function () {
+        event.preventDefault();
         $('.gif-button').remove(); 
         addedGifs.empty();  
-        event.preventDefault();
         mainHeaderText.text('Mood GIF\'s'); 
-        emotions.added = []; 
+        emotions.added = [];  
         localStorage.setItem('addedEmotions', emotions.added)
         makeButtons();
     });   
     
-});   
+});     

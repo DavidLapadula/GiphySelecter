@@ -102,17 +102,7 @@ div[class*="row"]{
     text-align: center;
     font-size: 1.1em;
 } 
-   
-#reset-button {
-    width: 100%;  
-    background-color: purple; 
-    color: white;
-    text-align: center;
-    font-size: 1.1em;
-    margin: 1em 0.5em; 
-    padding: 0.5em 0; 
-} 
-
+    
 #add-gif-button:hover, #reset-button:hover {
     background-color: white;
     color: purple;
@@ -126,12 +116,13 @@ div[class*="row"]{
     font-size: 1.1em;
     margin: 1em 0.5em; 
     padding: 0.5em 0; 
+    outline: none; 
 }
 
 #reset-mood:hover { 
     border-radius: 90%; 
 } 
-     
+      
 /* Row with content begins  */
 #buttons-div { 
     width: 10%; 
@@ -182,7 +173,7 @@ div[class*="row"]{
     height: 8vw;  
 }
   
-/* Account for average screen of laptop*/
+/* Account for different screen sizes*/
 
 @media screen and (max-width: 1440px) {
     
