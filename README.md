@@ -1,4 +1,4 @@
-# Trivia Game
+# Giphy API Query
 UofT Bootcamp - Week 6 Assignment
 
 # Description
@@ -16,5 +16,5 @@ Match your mood to a fun GIF. Add mood selector buttons and save your favourites
 * Click a mood button and watch the screen populate with 10 static Gif's
 * Click the GIF to animate it
 * Use the submission bar in the upper right hand corner to add your favourite moods
-
+ 
 [Play it here](https://davidlapadula.github.io/Week-6-API/)
