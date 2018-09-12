@@ -1,8 +1,14 @@
 # Giphy API Query
-UofT Bootcamp - Week 6 Assignment
 
-# Description
-Match your mood to a fun GIF. Add mood selector buttons and save your favourites for later. 
+## Description
+This is a simple 'Gif' searching application - users visiting the page can click predefined buttons to view static images (which turn to gifs once clicked) and add mood selector buttons with a simple submission form. 
+
+## Screenshots
+
+![](./assets/images/giphyAPI.gif)
+
+## Motivation
+This project was used to practice implementing basic API calls and rendering the data. Since so many web applications require gathering data from an external source, understanding asychronous javascript requests (and, by extension, promises) is essential. I also had the chance to utilize 'local storage' functions for interacting with browser memory. This facilitated storing user choices between sessions and provided an excellent introduction to data persistency. 
 
 ## Technology Used
 * HTML
@@ -11,6 +17,7 @@ Match your mood to a fun GIF. Add mood selector buttons and save your favourites
 * Jquery
 * AJAX used to query the GIPHY API
 * Local Storage used to save the user's 'favourited' mood buttons
+
 
 ## Resolutions
 I wanted to add a feature to this program that would allow users to store their favourite mood selectors for later use. I accomplished this by storing the value of 'favorited' selectors in local storage, and then pulling the data (in JSON format) from there when the user loaded the browser
