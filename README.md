@@ -26,5 +26,3 @@ I wanted to add a feature to this program that would allow users to store their 
 * Click a mood button and watch the screen populate with 10 static Gif's
 * Click the GIF to animate it
 * Use the submission bar in the upper right hand corner to add your favourite moods
- 
-[Play it here](https://davidlapadula.github.io/Week-6-API/)
